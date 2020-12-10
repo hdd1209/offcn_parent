@@ -1,0 +1,32 @@
+server:
+  port: 9000
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/atcrowdfunding?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  application:
+    name: SCW-ORDER
+  redis:
+    port: 6379
+    password: 123456
+    host: 192.168.18.131
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+logging:
+  file:
+    path: D:\Program\SpringBoot\log
+  level:
+    com:
+      hyd: debug  #设置路径bu不然报错
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:com/hyd/order/mapper/*.xml
